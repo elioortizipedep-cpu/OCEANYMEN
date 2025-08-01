@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OCEANY</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background-color: #ffffff;
+    }
+
+    #header ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    #header ul li {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+
+    .boton-menu {
+      position: fixed;
+      top: 21%;
+      left: 7px;
+      transform: translateY(-50%);
+      z-index: 1000;
+    }
+
+    .boton-principal {
+      background-color: #000000;
+      color: white;
+      border: none;
+      border-radius: 30%;
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+      cursor: grab;
+      box-shadow: 0 4px 10px rgb(0, 0, 0);
+      transition: background 0.3s ease;
+    }
+
+    .boton-principal:hover {
+      background-color: #000000;
+    }
+
+    .botones-secundarios {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 10px;
+      opacity: 0;
+      transform: translateX(30px);
+      pointer-events: none;
+      transition: opacity 0.1s ease, transform 0.3s ease;
+    }
+
+    .botones-secundarios.activo {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+
+    .botones-secundarios a {
+      margin: 5px 0;
+      width: 130px;
+      padding: 10px;
+      text-align: center;
+      display: block;
+      text-decoration: none;
+      background-color: rgb(0, 0, 0);
+      color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: transform 0.2s ease, background 0.3s;
+    }
+
+    .botones-secundarios a:hover {
+      background-color: rgb(50, 50, 50);
+      transform: scale(1.05);
+    }
+
+  </style>
+</head>
+<body> 
+
+  <div class="boton-menu">
+    <button class="boton-principal" onclick="toggleMenu()">☰</button>
+
+    <div class="botones-secundarios" id="menu">
+      <a href="file:///C:/Users/PC/Downloads/codigoAlvinsyR.html">Ropa</a>
+      <a href="file:///C:/Users/PC/Downloads/codigoluis.html">Gorras</a>
+      <a href="file:///C:/Users/PC/Downloads/codigoelio.html">Calzado</a>
+      <a href="file:///C:/Users/PC/Downloads/codigojuan.html">Perfumes</a>
+      <a href="file:///C:/Users/PC/Downloads/codigoalbum.html">Acerca de Nosotros</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('activo');
+    }
+  </script>
+
+  <div style="position: relative;">
+    <img src="https://i.pinimg.com/1200x/1a/aa/65/1aaa6528dbdab5f1e88842f751e07f8e.jpg" style="
+      position: absolute;
+      top: 100%;
+      left: 15%;
+      opacity: 1;
+      width: 1000px;
+      height: 750px;
+      z-index: 0;
+      pointer-events: none;
+    ">
+    <div style="position: relative; z-index: 1;"></div>
+  </div>
+
+</body>
+</html>
